@@ -17,7 +17,7 @@ jobs:
       
       - run:
           name: "Run Build step"
-          command: dotnet.exe publish -c Release -r win10-x64
+          command: msbuild /p:Configuration=Release /p:DebugSymbols=false /p:TargetFrameworkVersion="v4.7"
           
       - run:
           name: "Run App step"
