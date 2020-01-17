@@ -22,3 +22,9 @@ jobs:
       - run:
           name: "Run App step"
           command: .\testbuddy\bin\Release\testbuddy.exe
+      - run:
+          name: "Download PostgreSQL step"
+          command: $url = "http://get.enterprisedb.com/postgresql/postgresql-9.3.5-1-windows-x64.exe"
+                   $output = "postgresql-9.3.5-1-windows-x64.exe"
+                   $start_time = Get-Date
+                   Invoke-WebRequest -Uri $url -OutFile $output
